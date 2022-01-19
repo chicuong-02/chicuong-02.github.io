@@ -15,7 +15,7 @@ function Loaded() {
   CPlayer = 0; // Current Player (0 is O,1 is X)
   (l_played = []), (l_win = []);
   var imgp = document.getElementById("imgPlayer");
-  imgp.style.backgroundImage = "url('Images/Opng.png')";
+  imgp.style.backgroundImage = "url('images/Opng.png')";
 
   var table = document.getElementById("table");
   var row = document.getElementsByClassName("row");
@@ -41,8 +41,8 @@ function Click(id) {
   var square = document.getElementsByClassName("square");
   var pos = parseInt(id);
   if (square.item(pos).getAttribute("player") != "-1") return;
-  var path = "url('Images/Opng.png')";
-  if (CPlayer == 1) path = "url('Images/Xpng.png')";
+  var path = "url('images/Opng.png')";
+  if (CPlayer == 1) path = "url('images/Xpng.png')";
   square.item(pos).style.backgroundImage = path;
   square.item(pos).setAttribute("player", CPlayer.toString());
   l_played.push(pos);
@@ -54,8 +54,8 @@ function Click(id) {
     if (CPlayer == 0) CPlayer = 1;
     else CPlayer = 0;
 
-    var iplayer = "url('Images/Opng.png')";
-    if (CPlayer == 1) iplayer = "url('Images/Xpng.png')";
+    var iplayer = "url('images/Opng.png')";
+    if (CPlayer == 1) iplayer = "url('images/Xpng.png')";
     var imgp = document.getElementById("imgPlayer");
     imgp.style.backgroundImage = iplayer;
   } else {
@@ -284,8 +284,8 @@ function Undo(time) {
   if (CPlayer == 0) CPlayer = 1;
   else CPlayer = 0;
 
-  var iplayer = "url('Images/Opng.png')";
-  if (CPlayer == 1) iplayer = "url('Images/Xpng.png')";
+  var iplayer = "url('images/Opng.png')";
+  if (CPlayer == 1) iplayer = "url('images/Xpng.png')";
   var imgp = document.getElementById("imgPlayer");
   imgp.style.backgroundImage = iplayer;
 
