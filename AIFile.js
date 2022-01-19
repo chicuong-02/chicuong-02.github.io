@@ -28,7 +28,7 @@ function AIMode()
 	{
 		var sqr = document.getElementsByClassName("square");
 		sqr.item(px + py*size).setAttribute("player","1");
-		sqr.item(px + py*size).style.backgroundImage = "url('Images/Xpng.png')";
+		sqr.item(px + py*size).style.backgroundImage = "url('images/Xpng.png')";
 		l_played.push(px+py*size);
 	}
 	catch(e) {alert(e.message)}
@@ -40,7 +40,7 @@ function GetBoard()
 	var sqr = document.getElementsByClassName("square");
 	for (i = 0; i < size*size;i++)
 		TBoard.push(parseInt(sqr.item(i).getAttribute("player")));
-		
+
 	return TBoard;
 }
 
@@ -48,13 +48,13 @@ function GetMark(x,y,Tboard)
 {
 	var val = Tboard[x+y*size];
 	if (val == -1) return 0;
-	
-	var result = A_Atk[GetMarkHor(x,y,Tboard,1)] + A_Atk[GetMarkVer(x,y,Tboard,1)] 
+
+	var result = A_Atk[GetMarkHor(x,y,Tboard,1)] + A_Atk[GetMarkVer(x,y,Tboard,1)]
 	+ A_Atk[GetMarkCross1(x,y,Tboard,1)] + A_Atk[GetMarkCross2(x,y,Tboard,1)];
-	
-	result += A_Def[GetMarkHor(x,y,Tboard,0)] + A_Def[GetMarkVer(x,y,Tboard,0)] 
+
+	result += A_Def[GetMarkHor(x,y,Tboard,0)] + A_Def[GetMarkVer(x,y,Tboard,0)]
 	+ A_Def[GetMarkCross1(x,y,Tboard,0)] + A_Def[GetMarkCross2(x,y,Tboard,0)];
-	
+
 	return result;
 }
 
